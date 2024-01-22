@@ -4,7 +4,31 @@ use App\Http\Controllers\ProfileController;
 use Illuminate\Support\Facades\Route;
 
 Route::get('/', function () {
-    return view('welcome');
+    /* return view('welcome'); */
+    return "Hola";
+});
+
+Route::get('cursos', function(){
+    return "Cursos de PHP";
+});
+
+Route::get('cursos/create', function () {
+    return "En esta página podras crear cursos";
+});
+
+Route::get('cursos/{curso}', function($curso){
+    return "Bienvenido al curso: $curso";
+});
+
+Route::get('cursos/{curso}/{categoria?}', function ($curso,$categoria=null) {
+    if ($categoria) {
+        # code...
+        return "Bienvenido al cursos de : $curso, de la categoria: $categoria";
+    } else {
+        # code...
+        return "Bienvenido al curso: $curso";
+    }
+    
 });
 
 Route::get('/dashboard', function () {
