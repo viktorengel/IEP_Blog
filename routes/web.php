@@ -1,26 +1,19 @@
 <?php
 
+use App\Http\Controllers\HomeController;
 use App\Http\Controllers\ProfileController;
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\CursoController;
 
-Route::get('/', function () {
-    /* return view('welcome'); */
-    return "Hola";
-});
+Route::get('/', HomeController::class );
 
-Route::get('cursos', function(){
-    return "Cursos de PHP";
-});
+Route::get('cursos', [CursoController::class, 'index']);
 
-Route::get('cursos/create', function () {
-    return "En esta página podras crear cursos";
-});
+Route::get('cursos/create', [CursoController::class, 'create']);
 
-Route::get('cursos/{curso}', function($curso){
-    return "Bienvenido al curso: $curso";
-});
+Route::get('cursos/{curso}', [CursoController::class, 'show']);
 
-Route::get('cursos/{curso}/{categoria?}', function ($curso,$categoria=null) {
+/* Route::get('cursos/{curso}/{categoria?}', function ($curso,$categoria=null) {
     if ($categoria) {
         # code...
         return "Bienvenido al cursos de : $curso, de la categoria: $categoria";
@@ -29,7 +22,7 @@ Route::get('cursos/{curso}/{categoria?}', function ($curso,$categoria=null) {
         return "Bienvenido al curso: $curso";
     }
     
-});
+}); */
 
 Route::get('/dashboard', function () {
     return view('dashboard');
