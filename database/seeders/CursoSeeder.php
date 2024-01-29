@@ -13,28 +13,6 @@ class CursoSeeder extends Seeder
      */
     public function run(): void
     {
-        $curso = new Curso();
-
-        $curso->name = "Laravel";
-        $curso->descripcion = "El mejor framework de php";
-        $curso->categoria = "Desarrollo web";
-
-        $curso->save();
-
-        $curso2 = new Curso();
-
-        $curso2->name = "Laravel";
-        $curso2->descripcion = "El mejor framework de php";
-        $curso2->categoria = "Desarrollo web";
-
-        $curso2->save();
-
-        $curso3 = new Curso();
-
-        $curso3->name = "Laravel";
-        $curso3->descripcion = "El mejor framework de php";
-        $curso3->categoria = "Desarrollo web";
-
-        $curso3->save();
+        //Curso::factory(50)->create();
     }
 }
