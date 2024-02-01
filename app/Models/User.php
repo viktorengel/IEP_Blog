@@ -48,9 +48,11 @@ class User extends Authenticatable
 
     protected function name() :Attribute
     {
-        return new Attribute();
+        return new Attribute(
             set: function($value){
                 return strtolower($value);
-            };
+            }
+        );
     }
+
 }
